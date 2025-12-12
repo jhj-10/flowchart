@@ -1,0 +1,87 @@
+* {
+  margin: 8px;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+input,
+select {
+  padding: 4px;
+}
+button {
+  padding: 4px 10px;
+}
+
+.text {
+  fill: #ffffff;
+  font-family: "Malgun Gothic", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  text-anchor: middle;
+  dominant-baseline: middle;
+}
+
+.title {
+  font-family: "Malgun Gothic", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  fill: #fff;
+  /* text-anchor: middle; */
+}
+
+.main {
+  font-family: "Malgun Gothic", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  text-anchor: middle;
+}
+
+.modal.hidden {
+  display: none;
+}
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 16px;
+  border-radius: 8px;
+  min-width: 320px;
+  font-family: "Malgun Gothic", sans-serif;
+  font-size: 14px;
+}
+.modal-content h3 {
+  margin-top: 0;
+}
+.modal-content form > div {
+  margin-bottom: 8px;
+}
+.modal-buttons {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+
+.node-menu {
+  position: absolute;
+  background: white;
+  border: 1px solid #aaa;
+  padding: 6px;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  z-index: 20;
+}
+
+.node-menu.hidden {
+  display: none;
+}
