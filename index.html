@@ -6,147 +6,32 @@
     <link rel="stylesheet" href="./scr/style3.css" />
   </head>
   <body>
-    <!-- 노드 추가 버튼 -->
-    <button id="btn-add-node">노드추가</button>
-
-    <!-- 노드 정보 입력 모달 -->
-    <div id="node-modal" class="modal hidden">
-      <div class="modal-content">
-        <h3>노드추가</h3>
-        <form id="node-form">
-          <div>
-            <label
-              >타입:
-              <select name="type">
-                <option value="process">프로세스</option>
-                <option value="terminator">시작/종료</option>
-                <option value="decision">판단/조건</option>
-                <option value="tag">태그</option>
-              </select>
-            </label>
-          </div>
-          <div>
-            <label
-              >행: <input name="row" type="number" step="1" required
-            /></label>
-          </div>
-          <div>
-            <label
-              >열: <input name="col" type="number" step="0.5" required
-            /></label>
-          </div>
-          <div>
-            <label>번호: <input name="title" type="text" /></label>
-          </div>
-          <div>
-            <label>제목: <input name="main" type="text" /></label>
-          </div>
-          <div>
-            <label>설명: <input name="desc" type="text" /></label>
-          </div>
-
-          <hr />
-
-          <!-- 선택: 어디에서 이어지는 선인지 -->
-          <div>
-            <label
-              >시작노드(옵션):
-              <input name="fromId" type="text" placeholder="예: 1,2" />
-            </label>
-          </div>
-          <div>
-            <label
-              >방향:
-              <select name="direction">
-                <option value="right">우향</option>
-                <option value="down">하향</option>
-              </select>
-            </label>
-          </div>
-          <div>
-            <label
-              >선종류:
-              <select name="style">
-                <option value="solid">직선</option>
-                <option value="dashed">점선</option>
-              </select>
-            </label>
-          </div>
-          <div>
-            <label
-              >라벨:
-              <input name="label" type="text" placeholder="Y / N 등" />
-            </label>
-          </div>
-
-          <div class="modal-buttons">
-            <button type="submit">저장</button>
-            <button type="button" id="btn-node-cancel">취소</button>
-          </div>
-        </form>
+    <!-- select 메뉴 -->
+    <form id="node-form">
+      <div>
+        <label>
+          업무절차
+          <select id="work-procedure" name="work-procedure">
+            <option value="1">1. 위기단계판단</option>
+          </select>
+        </label>
       </div>
-    </div>
 
-    <!-- floating node-menu (노드 클릭 시 표시되는 메뉴) -->
-    <div id="node-menu" class="node-menu hidden">
-      <button id="btn-view">상세보기</button>
-      <button id="btn-add">노드추가</button>
-      <button id="btn-delete">노드삭제</button>
-    </div>
-
-    <!-- 상세보기 모달 -->
-    <div id="detail-modal" class="modal hidden">
-      <div class="modal-content">
-        <!-- <h3>Node Details</h3> -->
-
-        <div id="detail-body"></div>
-
-        <div class="modal-buttons">
-          <button id="btn-edit">수정</button>
-          <!-- <button id="btn-save" class="hidden">저장</button> -->
-          <button id="btn-close-detail">확인</button>
-        </div>
+      <div>
+        <label>
+          업무단계
+          <select id="work-level" name="work-level">
+            <option value="1.6">1.6 소집결과 이사회</option>
+            <option value="1.0">1.0 발동요건 도달</option>
+            <option value="2.1">2.1 자체정상화소위완회 소집</option>
+          </select>
+        </label>
       </div>
-    </div>
-
-    <!-- 노드 추가 모달 -->
-    <div id="add-modal" class="modal hidden">
-      <div class="modal-content">
-        <h3>노드추가</h3>
-
-        <form id="add-form">
-          <label
-            >방향:
-            <select name="direction">
-              <option value="right">우향</option>
-              <option value="down">하향</option>
-            </select>
-          </label>
-
-          <label
-            >타입:
-            <select name="type">
-              <option value="process">프로세스</option>
-              <option value="decision">시작/종료</option>
-              <option value="terminator">판단/조건</option>
-              <option value="tag">태그</option>
-            </select>
-          </label>
-
-          <label>번호: <input name="title" /></label>
-          <label>제목: <input name="main" /></label>
-          <label>설명: <input name="desc" /></label>
-
-          <div class="modal-buttons">
-            <button type="submit">저장</button>
-            <button type="button" id="btn-close-add">취소</button>
-          </div>
-        </form>
-      </div>
-    </div>
+    </form>
 
     <!-- 기존 차트 영역 -->
-    <div id="org-chart"></div>
+    <div id="workflow"></div>
+    <div id="workflow-view" class="hidden"></div>
 
     <script src="./js/main.js"></script>
   </body>

@@ -12,6 +12,11 @@ button {
   padding: 4px 10px;
 }
 
+#workflow {
+  width: 100%;
+  border: 1px solid #ccc;
+}
+
 .text {
   fill: #ffffff;
   font-family: "Malgun Gothic", sans-serif;
@@ -21,7 +26,7 @@ button {
   dominant-baseline: middle;
 }
 
-.title {
+.sequence {
   font-family: "Malgun Gothic", sans-serif;
   font-weight: 400;
   font-size: 12px;
@@ -29,7 +34,7 @@ button {
   /* text-anchor: middle; */
 }
 
-.main {
+.title {
   font-family: "Malgun Gothic", sans-serif;
   font-weight: 400;
   font-size: 14px;
@@ -39,6 +44,11 @@ button {
 .modal.hidden {
   display: none;
 }
+
+.hidden {
+  display: none;
+}
+
 .modal {
   position: fixed;
   inset: 0;
@@ -84,4 +94,10 @@ button {
 
 .node-menu.hidden {
   display: none;
+}
+
+g[data-node-id].is-selected rect,
+g[data-node-id].is-selected path {
+  stroke: red;
+  stroke-width: 2;
 }
